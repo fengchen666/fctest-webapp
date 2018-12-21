@@ -1,0 +1,8 @@
+version: '3'
+services:
+  fctest:
+    build: .
+    volumes:
+      - .:/opt/app
+      - ~/.aws:/root/.aws
+    command: sh -c "cd /opt/app && ./buildkite_docker_runtest.sh"
